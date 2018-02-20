@@ -71,6 +71,7 @@ export class UICarouselComponent implements OnInit {
         if(this.autoPlay){
             this.autoPlayFunction(true);
         }
+        this.subscriptions = new Subscription();
         this.subscriptions.add(this.nextSubject.throttleTime(this.speed).subscribe(() => {
             if (!this.fade) {
                 this.slideLeft();
